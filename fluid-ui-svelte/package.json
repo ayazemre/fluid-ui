@@ -4,7 +4,7 @@
 	"description": "Unopinionated UI library for Svelte.",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ayazemre/fluid-ui-svelte.git"
+		"url": "https://github.com/frostium-dev/fluid-ui.git"
 	},
 	"scripts": {
 		"dev": "vite dev",

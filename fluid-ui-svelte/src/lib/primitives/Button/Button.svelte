@@ -1,7 +1,6 @@
 <script lang="ts">
-	export let buttonClass: string = '';
-	export let defaultClass: string = 'fluid-button';
-	export let overrideClass: boolean = false;
+	export let styles: string = '';
+	export let defaultStyles: boolean = true;
 	export let buttonType: 'submit' | 'button' | 'reset' = 'button';
 	export let isDisabled: boolean = false;
 	export let buttonName: string = '';
@@ -23,7 +22,7 @@
 	use:registerAction
 	on:click
 	type={buttonType}
-	class={overrideClass ? buttonClass : defaultClass + ' ' + buttonClass}
+	class={defaultStyles ? 'fluid-button' + (styles ? ' ' + styles : '') : styles ? styles : ' '}
 	disabled={isDisabled}
 	name={buttonName}
 	value={buttonValue}
