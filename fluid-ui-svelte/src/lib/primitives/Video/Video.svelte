@@ -1,26 +1,21 @@
 <script lang="ts">
-	export let audioClass: string = '';
-	export let defaultClass: string = 'fluid-video';
-	export let overrideClass: boolean = false;
-	export let src: string = '';
-	export let isAutoPlay: boolean = false;
-	export let isControls: boolean = false;
-	export let isLoop: boolean = false;
-	export let isMuted: boolean = false;
-	export let preload: 'auto' | 'metadata' | 'none' = 'auto';
+	type TrackCaptions = {
+		src: string;
+		src_lang: string;
+		label: string;
+	};
+	type FluidVideoProps = {
+		styles: string;
+		src: string;
+		type: string;
+		captions: TrackCaptions;
+	};
+	let { styles = 'fluid_video', src, type, captions, ...rest_props } = $props<FluidVideoProps>();
 </script>
 
-<video
-	on:play
-	on:pause
-	on:canplay
-	on:progress
-	class={overrideClass ? audioClass : defaultClass + ' ' + audioClass}
-	{src}
-	autoplay={isAutoPlay}
-	controls={isControls}
-	loop={isLoop}
-	muted={isMuted}
-	{preload}
-	{...$$restProps}
-/>
+{#if captions.length > 0}
+	<video class={styles} {...restProps}>
+		<source {src} {type} />
+		<track kind="captions" src={captions.src} srclang={captions.src_lang} label={captions.label} />
+	</video>
+{/if}

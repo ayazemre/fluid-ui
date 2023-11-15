@@ -1,14 +1,8 @@
 <script lang="ts">
-	export let imageClass: string = '';
-	export let defaultClass: string = 'fluid-image';
-	export let overrideClass: boolean = false;
-	export let imageSource: string = '';
-	export let altText: string = '';
+	type FluidImageProps = {
+		styles: string;
+	};
+	let { styles = 'fluid_image', ...rest_props } = $props<FluidImageProps>();
 </script>
 
-<img
-	src={imageSource}
-	alt={altText}
-	class={overrideClass ? imageClass : defaultClass + ' ' + imageClass}
-	{...$$restProps}
-/>
+<img class={styles} {...rest_props} />

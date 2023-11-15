@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Image from '../../primitives/Image/Image.svelte';
+	import Image from '../../primitives/image/image.svelte';
 	export let avatarClass: string = '';
 	export let defaultClass: string = 'fluid-avatar';
 	export let overrideClass: boolean = false;

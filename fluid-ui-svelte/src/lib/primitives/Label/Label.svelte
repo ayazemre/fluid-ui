@@ -1,11 +1,12 @@
 <script lang="ts">
-	export let labelClass: string = '';
-	export let defaultClass: string = 'fluid-label';
-	export let overrideClass: boolean = false;
-	export let targetInput: string = '';
-	export let text: string = '';
+	type FluidLabelProps = {
+		styles: string;
+		text: string;
+		target: string;
+	};
+	let { styles = 'fluid_label', text, target, ...rest_props } = $props<FluidLabelProps>();
 </script>
 
-<label class={overrideClass ? labelClass : defaultClass + ' ' + labelClass} for={targetInput}>
+<label class={styles} for={target} {...rest_props}>
 	{text}
 </label>

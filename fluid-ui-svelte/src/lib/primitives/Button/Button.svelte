@@ -1,32 +1,17 @@
 <script lang="ts">
-	export let styles: string = '';
-	export let defaultStyles: boolean = true;
-	export let buttonType: 'submit' | 'button' | 'reset' = 'button';
-	export let isDisabled: boolean = false;
-	export let buttonName: string = '';
-	export let buttonValue: string = '';
-	export let registerMount: (node: Node) => void = () => {};
-	export let registerDestroy: (node: Node) => void = () => {};
-
-	function registerAction(node: Node) {
-		registerMount(node);
-		return {
-			destroy() {
-				registerDestroy(node);
-			}
-		};
-	}
+	type FluidButtonProps = {
+		styles: string;
+		button_type: 'submit' | 'button' | 'reset';
+		is_disabled: boolean;
+	};
+	let {
+		styles = 'fluid_button',
+		button_type = 'button',
+		is_disabled = false,
+		...rest_props
+	} = $props<FluidButtonProps>();
 </script>
 
-<button
-	use:registerAction
-	on:click
-	type={buttonType}
-	class={defaultStyles ? 'fluid-button' + (styles ? ' ' + styles : '') : styles ? styles : ' '}
-	disabled={isDisabled}
-	name={buttonName}
-	value={buttonValue}
-	{...$$restProps}
->
+<button type={button_type} class={styles} disabled={is_disabled} {...rest_props}>
 	<slot />
 </button>

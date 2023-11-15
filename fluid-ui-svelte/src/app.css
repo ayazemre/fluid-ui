@@ -2,18 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base Settings */
+
+/* If you would like to start with containers on highest level you need to use flow-root to prevent margin collapse */
+.body {
+    display: flow-root;
+}
+
+/* Primitives */
 
 .fluid-audio {
     @apply m-2 p-2
 }
 
 .fluid-button {
-    @apply m-2 p-2 bg-blue rounded-md hover:bg-yellow disabled:bg-opacity-25
+    @apply m-2 p-2 disabled:bg-opacity-25
 }
 
 .fluid-container {
-    @apply m-2 p-2 bg-orange rounded-md
+    @apply m-2 p-2 rounded-md
 }
+
 
 .fluid-form {
     @apply m-2 p-2
@@ -80,3 +89,8 @@
 .fluid-toggle {
     @apply bg-gray after:bg-graylight after:border-graylight w-11 h-6 rounded-full after:absolute after:top-[2px] after:left-[2px] after:border after:rounded-full after:h-5 after:w-5 after:transition-all
 }
+
+/* Components */
+
+
+/* Custom Components */

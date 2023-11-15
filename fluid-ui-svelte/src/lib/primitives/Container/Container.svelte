@@ -1,50 +1,29 @@
 <script lang="ts">
-	export let styles: string = '';
-	export let defaultStyles: boolean = true;
-	export let containerType: 'div' | 'section' | 'nav' | 'footer' = 'div';
-	export let registerMount: (node: Node) => void = () => {};
-	export let registerDestroy: (node: Node) => void = () => {};
-
-	function registerAction(node: Node) {
-		registerMount(node);
-		return {
-			destroy() {
-				registerDestroy(node);
-			}
-		};
-	}
+	type FluidContainerProps = {
+		styles: string;
+		container_type: 'div' | 'section' | 'nav' | 'footer';
+	};
+	let {
+		styles = 'fluid_container',
+		container_type = 'div',
+		...rest_props
+	} = $props<FluidContainerProps>();
 </script>
 
-{#if containerType == 'div'}
-	<div
-		use:registerAction
-		class={defaultStyles ? 'fluid-container' + (styles ? ' ' + styles : '') : styles ? styles : ' '}
-		{...$$restProps}
-	>
+{#if container_type == 'div'}
+	<div class={styles} {...rest_props}>
 		<slot />
 	</div>
-{:else if containerType == 'section'}
-	<section
-		use:registerAction
-		class={defaultStyles ? 'fluid-container' + (styles ? ' ' + styles : '') : styles ? styles : ' '}
-		{...$$restProps}
-	>
+{:else if container_type == 'section'}
+	<section class={styles} {...rest_props}>
 		<slot />
 	</section>
-{:else if containerType == 'nav'}
-	<nav
-		use:registerAction
-		class={defaultStyles ? 'fluid-container' + (styles ? ' ' + styles : '') : styles ? styles : ' '}
-		{...$$restProps}
-	>
+{:else if container_type == 'nav'}
+	<nav class={styles} {...rest_props}>
 		<slot />
 	</nav>
-{:else if containerType == 'footer'}
-	<nav
-		use:registerAction
-		class={defaultStyles ? 'fluid-container' + (styles ? ' ' + styles : '') : styles ? styles : ' '}
-		{...$$restProps}
-	>
+{:else if container_type == 'footer'}
+	<nav class={styles} {...rest_props}>
 		<slot />
 	</nav>
 {:else}

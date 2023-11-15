@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Container from '../../primitives/Container/Container.svelte';
+	import Container from '../../primitives/container/container.svelte';
 	export let accordionClass: string = 'flex flex-col bg-green';
 </script>
 

@@ -1,9 +1,10 @@
 <script lang="ts">
-	export let tableClass: string = '';
-	export let defaultClass: string = 'fluid-table';
-	export let overrideClass: boolean = false;
+	type FluidTableProps = {
+		styles: string;
+	};
+	let { styles = 'fluid_table', ...rest_props } = $props<FluidTableProps>();
 </script>
 
-<table class={overrideClass ? tableClass : defaultClass + ' ' + tableClass}>
+<table class={styles} {...rest_props}>
 	<slot />
 </table>

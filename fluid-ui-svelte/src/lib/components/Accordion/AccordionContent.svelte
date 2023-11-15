@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Container from '../../primitives/Container/Container.svelte';
+	import Container from '../../primitives/container/container.svelte';
 	export let accordionContentClass: string = 'm-2 p-2';
 	export let isVisible: boolean;
 </script>
