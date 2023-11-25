@@ -1,7 +1,26 @@
 {
+  "name": "fluid-ui-react",
+  "version": "0.0.2",
+  "description": "Unopinionated UI library for React.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frostium-dev/fluid-ui.git"
+  },
+  "main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && tsc"
+  },
+  "author": "Emre Ayaz",
+  "license": "MIT",
   "devDependencies": {
-    "@types/react": "^18.2.37",
+    "@types/react": "^18.2.38",
     "react": "^18.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2",
+    "vite": "^5.0.2"
   }
 }
