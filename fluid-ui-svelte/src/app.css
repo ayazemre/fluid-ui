@@ -1,96 +1,145 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
 
-/* Base Settings */
+@theme {
+    --font-family-display: "Inter", "sans-serif";
 
-/* If you would like to start with containers on highest level you need to use flow-root to prevent margin collapse */
-.body {
-    display: flow-root;
+    --color-*: initial;
+
+    --color-black-50: #3f6212;
+    --color-black-100: #365314;
+    --color-black-200: #1a2e05;
+    --color-black-300: #3f6212;
+    --color-black-400: #365314;
+    --color-black-500: #1a2e05;
+    --color-black-600: #3f6212;
+    --color-black-700: #365314;
+    --color-black-800: #1a2e05;
+    --color-black-900: #1a2e05;
+    --color-black-950: #1a2e05;
+
+    --color-white-50: #3f6212;
+    --color-white-100: #365314;
+    --color-white-200: #1a2e05;
+    --color-white-300: #3f6212;
+    --color-white-400: #365314;
+    --color-white-500: #1a2e05;
+    --color-white-600: #3f6212;
+    --color-white-700: #365314;
+    --color-white-800: #1a2e05;
+    --color-white-900: #1a2e05;
+    --color-white-950: #1a2e05;
+
+    --color-gray-50: #f8fafc;
+    --color-gray-100: #f1f5f9;
+    --color-gray-200: #e2e8f0;
+    --color-gray-300: #e2e8f0;
+    --color-gray-400: #e2e8f0;
+    --color-gray-500: #e2e8f0;
+    --color-gray-600: #e2e8f0;
+    --color-gray-700: #e2e8f0;
+    --color-gray-800: #e2e8f0;
+    --color-gray-900: #e2e8f0;
+    --color-gray-950: #1a2e05;
+
+    --color-primary-50: #f8fafc;
+    --color-primary-100: #f1f5f9;
+    --color-primary-200: #e2e8f0;
+    --color-primary-300: #e2e8f0;
+    --color-primary-400: #e2e8f0;
+    --color-primary-500: #e2e8f0;
+    --color-primary-600: #e2e8f0;
+    --color-primary-700: #e2e8f0;
+    --color-primary-800: #e2e8f0;
+    --color-primary-900: #e2e8f0;
+    --color-primary-950: #1a2e05;
+
+    --color-secondary-50: #f8fafc;
+    --color-secondary-100: #f1f5f9;
+    --color-secondary-200: #e2e8f0;
+    --color-secondary-300: #e2e8f0;
+    --color-secondary-400: #e2e8f0;
+    --color-secondary-500: #e2e8f0;
+    --color-secondary-600: #e2e8f0;
+    --color-secondary-700: #e2e8f0;
+    --color-secondary-800: #e2e8f0;
+    --color-secondary-900: #e2e8f0;
+    --color-secondary-950: #1a2e05;
+
+    --color-tetriary-50: #f8fafc;
+    --color-tetriary-100: #f1f5f9;
+    --color-tetriary-200: #e2e8f0;
+    --color-tetriary-300: #e2e8f0;
+    --color-tetriary-400: #e2e8f0;
+    --color-tetriary-500: #e2e8f0;
+    --color-tetriary-600: #e2e8f0;
+    --color-tetriary-700: #e2e8f0;
+    --color-tetriary-800: #e2e8f0;
+    --color-tetriary-900: #e2e8f0;
+    --color-tetriary-950: #1a2e05;
+
+    --color-success-50: #f8fafc;
+    --color-success-100: #f1f5f9;
+    --color-success-200: #e2e8f0;
+    --color-success-300: #e2e8f0;
+    --color-success-400: #e2e8f0;
+    --color-success-500: #e2e8f0;
+    --color-success-600: #e2e8f0;
+    --color-success-700: #e2e8f0;
+    --color-success-800: #e2e8f0;
+    --color-success-900: #e2e8f0;
+    --color-success-950: #1a2e05;
+
+    --color-error-50: #f8fafc;
+    --color-error-100: #f1f5f9;
+    --color-error-200: #e2e8f0;
+    --color-error-300: #e2e8f0;
+    --color-error-400: #e2e8f0;
+    --color-error-500: #e2e8f0;
+    --color-error-600: #e2e8f0;
+    --color-error-700: #e2e8f0;
+    --color-error-800: #e2e8f0;
+    --color-error-900: #e2e8f0;
+    --color-error-950: #1a2e05;
+
+    --color-warning-50: #fef2f2;
+    --color-warning-100: #fee2e2;
+    --color-warning-200: #fecaca;
+    --color-warning-300: #fca5a5;
+    --color-warning-400: #f87171;
+    --color-warning-500: #ef4444;
+    --color-warning-600: #dc2626;
+    --color-warning-700: #b91c1c;
+    --color-warning-800: #991b1b;
+    --color-warning-900: #7f1d1d;
+    --color-warning-950: #450a0a;
+
+    --color-info-50: #eff6ff;
+    --color-info-100: #dbeafe;
+    --color-info-200: #bfdbfe;
+    --color-info-300: #93c5fd;
+    --color-info-400: #60a5fa;
+    --color-info-500: #3b82f6;
+    --color-info-600: #2563eb;
+    --color-info-700: #1d4ed8;
+    --color-info-800: #1e40af;
+    --color-info-900: #1e3a8a;
+    --color-info-950: #172554;
 }
 
-/* Primitives */
-
 .fluid-audio {
-    @apply m-2 p-2
+    @apply p-2 bg-primary-500 m-2
 }
 
 .fluid-button {
-    @apply m-2 p-2 disabled:bg-opacity-25
+    @apply p-2 bg-warning-500 m-2 hover:bg-info-500 active:bg-info-950
 }
 
 .fluid-container {
-    @apply m-2 p-2 rounded-md
+    @apply p-2 bg-warning-300 h-full
 }
 
-
-.fluid-form {
-    @apply m-2 p-2
+.fluid-dialog {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
 }
-
-.fluid-image {
-    @apply m-2 p-2
-}
-
-.fluid-color-input {
-    @apply m-2 p-2
-}
-
-.fluid-date-time-input {
-    @apply m-2 p-2
-}
-
-.fluid-file-input {
-    @apply m-2 p-2
-}
-
-.fluid-color-input {
-    @apply m-2 p-2
-}
-
-.fluid-color-input {
-    @apply m-2 p-2
-}
-
-.fluid-label {
-    @apply m-2 p-2
-}
-
-.fluid-link {
-    @apply m-2 p-2
-}
-
-.fluid-select {
-    @apply m-2 p-2
-}
-
-.fluid-option {
-    @apply m-2 p-2
-}
-
-.fluid-table {
-    @apply m-2 p-2
-}
-
-.fluid-text {
-    @apply m-2 p-2
-}
-
-.fluid-video {
-    @apply m-2 p-2
-}
-
-/* Avatar expands itself so it is not bound to image file's size. Wrap around a container while using. */
-.fluid-avatar {
-    @apply m-2 p-2 rounded-full w-full h-full aspect-square
-}
-
-/* Only change colors here. This defines the toggle component itself.*/
-.fluid-toggle {
-    @apply bg-gray after:bg-graylight after:border-graylight w-11 h-6 rounded-full after:absolute after:top-[2px] after:left-[2px] after:border after:rounded-full after:h-5 after:w-5 after:transition-all
-}
-
-/* Components */
-
-
-/* Custom Components */

@@ -1,107 +1,58 @@
-# This package is under development, you can check the version number. I need lots of refactoring to do for ARIA and performance optimizations. I would not recommend using it before I reach at least v.0.5.x.
+# create-svelte
 
-# Fluid UI for Svelte/SvelteKit
+Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-Fluid UI is a UI library with minimal styling and layout. All of the primitives are basic abstractions of html elements and components are just building blocks for the actual component. You will need to build components yourself using those building blocks.
+Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
 
-# Getting Started
+## Creating a project
 
-Install the library.
+If you're seeing this, you've probably already done this step. Congrats!
+
+```bash
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
 ```
-npm i fluid-ui-svelte
+
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-Import a component to your UI.
+Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+
+## Building
+
+To build your library:
+
+```bash
+npm run package
 ```
-<script lang="ts">
-	import '../app.css';
-	import {Button} from '$lib/index.js';
-</script>
 
-<Button></Button>
+To create a production version of your showcase app:
+
+```bash
+npm run build
 ```
-Success :)
 
-# Tailwind "app.css" Template.
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+You can preview the production build with `npm run preview`.
 
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
-.fluid-audio {
-    @apply m-2 p-2
-}
+## Publishing
 
-.fluid-button {
-    @apply m-2 p-2 disabled:bg-opacity-25
-}
+Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
 
-.fluid-container {
-    @apply m-2 p-2
-}
+To publish your library to [npm](https://www.npmjs.com):
 
-.fluid-form {
-    @apply m-2 p-2
-}
-
-.fluid-image {
-    @apply m-2 p-2
-}
-
-.fluid-color-input {
-    @apply m-2 p-2
-}
-
-.fluid-date-time-input {
-    @apply m-2 p-2
-}
-
-.fluid-file-input {
-    @apply m-2 p-2
-}
-
-.fluid-color-input {
-    @apply m-2 p-2
-}
-
-.fluid-color-input {
-    @apply m-2 p-2
-}
-
-.fluid-label {
-    @apply m-2 p-2
-}
-
-.fluid-link {
-    @apply m-2 p-2
-}
-
-.fluid-select {
-    @apply m-2 p-2
-}
-
-.fluid-option {
-    @apply m-2 p-2
-}
-
-.fluid-table {
-    @apply m-2 p-2
-}
-
-.fluid-text {
-    @apply m-2 p-2
-}
-
-.fluid-video {
-    @apply m-2 p-2
-}
-
-.fluid-avatar {
-    @apply m-2 p-2 rounded-full w-full h-full aspect-square
-}
-
-.fluid-toggle {
-    @apply bg-gray after:bg-graylight after:border-graylight w-11 h-6 rounded-full after:absolute after:top-[2px] after:left-[2px] after:border after:rounded-full after:h-5 after:w-5 after:transition-all
-}
+```bash
+npm publish
 ```
