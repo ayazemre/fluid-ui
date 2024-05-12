@@ -143,3 +143,63 @@
 .fluid-dialog {
     @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
 }
+
+.fluid-form {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-image {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-input {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-label {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-option {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-select {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-table {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-table-body {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-table-data-cell {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-table-foot {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-table-head {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-table-header {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-table-row {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-text {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}
+
+.fluid-video {
+    @apply p-2 bg-warning-500 hover:bg-info-500 active:bg-info-950
+}

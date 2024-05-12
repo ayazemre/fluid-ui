@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { type HTMLTdAttributes } from 'svelte/elements';
 	const {
+		children,
 		class: className = 'fluid-table-data-cell',
 		...restProps
-	}: {
-		class?: string;
-	} & HTMLTdAttributes = $props();
+	}: { children: any; class?: string } & HTMLTdAttributes = $props();
 </script>
 
-<td class={'fluid-table-data-cell' + (className ? ` ${className}` : '')} {...restProps}></td>
+<td class={'fluid-table-data-cell' + (className ? ` ${className}` : '')} {...restProps}
+	>{@render children()}</td
+>

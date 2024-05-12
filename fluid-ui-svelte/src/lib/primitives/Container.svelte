@@ -1,14 +1,15 @@
 <script lang="ts">
+	import { type HTMLAttributes } from 'svelte/elements';
 	const {
 		children,
 		class: className,
 		containerType = 'div',
 		...restProps
 	}: {
-		children: any;
+		children?: any;
 		class?: string;
 		containerType?: 'div' | 'section' | 'nav' | 'footer' | 'aside';
-	} = $props();
+	} & HTMLAttributes<HTMLElement> = $props();
 </script>
 
 {#if containerType == 'div'}

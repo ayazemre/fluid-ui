@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { type HTMLButtonAttributes } from 'svelte/elements';
-	const { class: className, ...restProps }: { class?: string } & HTMLButtonAttributes = $props();
+	const {
+		children,
+		class: className,
+		...restProps
+	}: { children: any; class?: string } & HTMLButtonAttributes = $props();
 </script>
 
-<button class={'fluid-button' + (className ? ` ${className}` : '')} {...restProps}></button>
+<button class={'fluid-button' + (className ? ` ${className}` : '')} {...restProps}
+	>{@render children()}</button
+>

@@ -1,10 +1,7 @@
 <script lang="ts">
-	const {
-		class: className,
-		...restProps
-	}: {
-		class?: string;
-	} = $props();
+	const { children, class: className, ...restProps }: { children: any; class?: string } = $props();
 </script>
 
-<tr class={'fluid-table-row' + (className ? ` ${className}` : '')} {...restProps}></tr>
+<tr class={'fluid-table-row' + (className ? ` ${className}` : '')} {...restProps}>
+	{@render children()}</tr
+>
