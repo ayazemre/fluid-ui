@@ -19,7 +19,3 @@ export { default as TableHeader } from './primitives/TableHeader.svelte';
 export { default as TableRow } from './primitives/TableRow.svelte';
 export { default as Text } from './primitives/Text.svelte';
 export { default as Video } from './primitives/Video.svelte';
-
-//Base
-
-export { default as FluidTable } from './base/FluidTable.svelte';
