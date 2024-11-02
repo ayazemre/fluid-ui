@@ -42,6 +42,18 @@
     --color-secondary-900: #4c1d95;
     --color-secondary-950: #2a1065;
 
+    --color-tetriary-50: #f5f3ff;
+    --color-tetriary-100: #ede9fe;
+    --color-tetriary-200: #ddd6fe;
+    --color-tetriary-300: #c4b5fd;
+    --color-tetriary-400: #a78bfa;
+    --color-tetriary-500: #8b5cf6;
+    --color-tetriary-600: #7c3aed;
+    --color-tetriary-700: #6d28d9;
+    --color-tetriary-800: #5b21b6;
+    --color-tetriary-900: #4c1d95;
+    --color-tetriary-950: #2a1065;
+
     --color-success-50: #ecfdf5;
     --color-success-100: #d1fae5;
     --color-success-200: #a7f3d0;
@@ -92,34 +104,172 @@
 }
 
 
-.fluid-text {
-    @apply text-sm font-light;
+
+
+
+
+
+
+.fluid-container {
+    @apply p-2
 }
 
+/* Buttons ----------------------------*/
+.fluid-button {
+    @apply w-full h-full p-1
+}
+
+.fluid-button.fluid-solid-button.fluid-primary-button {
+    @apply bg-primary-500 hover:bg-primary-600
+}
+
+.fluid-button.fluid-solid-button.fluid-secondary-button {
+    @apply bg-secondary-500 hover:bg-secondary-600
+}
+
+.fluid-button.fluid-solid-button.fluid-tetriary-button {
+    @apply bg-tetriary-500 hover:bg-tetriary-600
+}
+
+.fluid-button.fluid-solid-button.fluid-neutral-button {
+    @apply bg-neutral-500 hover:bg-neutral-600
+}
+
+.fluid-button.fluid-solid-button.fluid-transparent-button {
+    @apply bg-transparent
+}
+
+.fluid-button.fluid-outline-button.fluid-primary-button {
+    @apply outline-1 outline-primary-500 hover:bg-primary-600
+}
+
+.fluid-button.fluid-outline-button.fluid-secondary-button {
+    @apply outline-1 outline-secondary-500 hover:bg-secondary-600
+}
+
+.fluid-button.fluid-outline-button.fluid-tetriary-button {
+    @apply outline-1 outline-tetriary-500 hover:bg-tetriary-600
+}
+
+.fluid-button.fluid-outline-button.fluid-neutral-button {
+    @apply outline-1 outline-neutral-500 hover:bg-neutral-600
+}
+
+.fluid-button.fluid-transparent-button.fluid-primary-button {
+    @apply bg-transparent hover:bg-primary-200
+}
+
+.fluid-button.fluid-transparent-button.fluid-secondary-button {
+    @apply bg-transparent hover:bg-secondary-200
+}
+
+.fluid-button.fluid-transparent-button.fluid-tetriary-button {
+    @apply bg-transparent hover:bg-tetriary-200
+}
+
+.fluid-button.fluid-transparent-button.fluid-neutral-button {
+    @apply bg-transparent hover:bg-neutral-200
+}
+
+
+/* Tables ----------------------------*/
+.fluid-table {
+    @apply w-full h-full border-1 border-primary-500 group-[.dark]:border-white text-center
+}
+
+.fluid-table-header {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-head {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-body {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-row {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-data {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-footer {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+
+/* Typography ----------------------------*/
 .fluid-h1 {
-    @apply text-4xl font-bold;
+    @apply text-5xl;
 }
 
 .fluid-h2 {
-    @apply text-2xl font-bold;
+    @apply text-4xl;
 }
 
 .fluid-h3 {
-    @apply text-xl font-bold;
+    @apply text-3xl;
 }
 
 .fluid-h4 {
-    @apply text-md font-bold;
+    @apply text-2xl;
 }
 
 .fluid-h5 {
-    @apply text-sm font-bold;
+    @apply text-xl;
 }
 
 .fluid-h6 {
-    @apply text-xs font-bold;
+    @apply text-lg;
 }
 
 .fluid-p {
-    @apply text-xl font-bold;
+    @apply text-base;
+}
+
+.fluid-text {
+    @apply text-black group-[.dark]:text-white;
+}
+
+
+/* Inputs ----------------------------*/
+.fluid-input {
+    @apply p-1
+}
+
+.fluid-input.fluid-text-input {
+    @apply outline-primary-500 w-full
+}
+
+/* Image ----------------------------*/
+.fluid-image {
+    @apply p-1
+}
+
+.fluid-image-loading, .fluid-image-error {
+    @apply w-full h-full p-4
+}
+
+
+/* Dropdown ----------------------------*/
+.fluid-dropdown {
+    @apply relative
+}
+
+.fluid-dropdown-trigger {
+    @apply hover:bg-error-500
+}
+
+.fluid-dropdown-content {
+    @apply absolute bg-success-500 z-10
+}
+
+/* Dialog ----------------------------*/
+
+.fluid-dialog {
+    @apply m-auto p-2
 }
