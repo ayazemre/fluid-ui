@@ -103,13 +103,6 @@
     --color-error-950: #450a0a;
 }
 
-
-
-
-
-
-
-
 .fluid-container {
     @apply p-2
 }
@@ -271,5 +264,5 @@
 /* Dialog ----------------------------*/
 
 .fluid-dialog {
-    @apply m-auto p-2
+    @apply m-auto p-2 outline-0
 }

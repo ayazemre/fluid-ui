@@ -13,7 +13,7 @@
 		class?: string;
 		overrideDefaultStyling?: boolean;
 		matchContentWidthToTrigger?: boolean;
-		trigger: Snippet;
+		trigger: Snippet<[isOpen: boolean]>;
 		children: Snippet;
 	} = $props();
 
@@ -26,7 +26,7 @@
 			isOpen = !isOpen;
 		}}
 	>
-		{@render trigger()}
+		{@render trigger(isOpen)}
 	</Button>
 	<Container class={"fluid-dropdown-content" + (isOpen ? "" : " hidden") + (matchContentWidthToTrigger ? " w-full" : "")}>
 		{@render children()}

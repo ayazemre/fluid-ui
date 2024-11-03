@@ -322,10 +322,10 @@
 	<Text textType={"p"} textValue="Dialog Content"></Text>
 </Dialog>
 
-{#snippet dropdownFreeContent()}
-	<Text textType={"p"} textValue="Dropdown Button"></Text>
+{#snippet dropdownFreeContent(isOpen: boolean)}
+	<Text textType={"p"} textValue={"Dropdown Button" + (isOpen ? " Open" : " Closed")}></Text>
 {/snippet}
 
-{#snippet dropdownMatchingContent()}
-	<Text textType={"p"} textValue="Dropdown Button with Matching Content"></Text>
+{#snippet dropdownMatchingContent(isOpen: boolean)}
+	<Text textType={"p"} textValue={"Dropdown Button with Matching Content" + (isOpen ? " Open" : " Closed")}></Text>
 {/snippet}
