@@ -13,6 +13,6 @@
 	} & HTMLLabelAttributes = $props();
 </script>
 
-<label {...restProps} class={(overrideDefaultStyling ? "" : "fluid-label") + (className ? ` ${className}` : "")}>
+<label {...restProps} class={(overrideDefaultStyling ? "" : "fluid-label") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 	{@render children()}
 </label>

@@ -238,6 +238,11 @@
     @apply outline-primary-500 w-full
 }
 
+
+.fluid-label {
+    @apply py-1
+}
+
 /* Image ----------------------------*/
 .fluid-image {
     @apply p-1
@@ -261,8 +266,22 @@
     @apply absolute bg-success-500 z-10
 }
 
-/* Dialog ----------------------------*/
 
+/* Dialog ----------------------------*/
 .fluid-dialog {
     @apply m-auto p-2 outline-0
+}
+
+
+/* Switch ----------------------------*/
+.fluid-switch {
+    @apply relative inline-block rounded-full w-11 h-5 bg-neutral-300
+}
+
+.fluid-switch-checked {
+    @apply bg-success-500
+}
+
+.fluid-switch-slider {
+    @apply absolute top-0 left-0 w-5 h-5 bg-white border-primary-400 rounded-full border-1 transition-transform duration-300 peer-checked:border-primary-800 peer-checked:translate-x-6
 }

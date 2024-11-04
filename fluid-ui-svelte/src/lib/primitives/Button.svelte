@@ -19,14 +19,10 @@
 </script>
 
 <button
-	class={overrideDefaultStyling
-		? ""
-		: "fluid-button" +
-			(className ? ` ${className}` : "") +
-			(buttonType == "solid" ? " fluid-solid-button" : "") +
-			(buttonType == "outline" ? " fluid-outline-button" : "") +
-			(buttonType == "transparent" ? " fluid-transparent-button" : "") +
-			(" fluid-" + buttonStyle + "-button")}
+	class={(overrideDefaultStyling ? "" : "fluid-button") +
+		(className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "") +
+		(" fluid-" + buttonType + "-button") +
+		(" fluid-" + buttonStyle + "-button")}
 	{...restProps}
 >
 	{@render children()}

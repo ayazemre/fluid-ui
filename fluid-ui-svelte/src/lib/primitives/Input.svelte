@@ -3,13 +3,21 @@
 	let {
 		class: className,
 		value = $bindable(),
+		checked = $bindable(false),
+		type,
 		overrideDefaultStyling = false,
 		...restProps
 	}: {
 		class?: string;
 		overrideDefaultStyling?: boolean;
-		value: any;
-	} & Omit<HTMLInputAttributes, "value"> = $props();
+		value?: any;
+		checked?: boolean;
+		type: string;
+	} & Omit<HTMLInputAttributes, "value" | "type"> = $props();
 </script>
 
-<input {...restProps} bind:value class={(overrideDefaultStyling ? "" : "fluid-input") + (className ? ` ${className}` : "")} />
+{#if type === "checkbox"}
+	<input {...restProps} bind:checked type="checkbox" class={(overrideDefaultStyling ? "" : "fluid-checkbox") + (className ? ` ${className}` : "")} />
+{:else}
+	<input {...restProps} bind:value class={(overrideDefaultStyling ? "" : "fluid-input") + (className ? ` ${className}` : "")} />
+{/if}

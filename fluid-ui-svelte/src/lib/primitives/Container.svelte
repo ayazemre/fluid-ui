@@ -17,23 +17,23 @@
 </script>
 
 {#if containerType == "div"}
-	<div {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? ` ${className}` : "")}>
+	<div {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 		{@render children()}
 	</div>
 {:else if containerType == "section"}
-	<section {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? ` ${className}` : "")}>
+	<section {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 		{@render children()}
 	</section>
 {:else if containerType == "aside"}
-	<aside {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? ` ${className}` : "")}>
+	<aside {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 		{@render children()}
 	</aside>
 {:else if containerType == "nav"}
-	<nav {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? ` ${className}` : "")}>
+	<nav {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 		{@render children()}
 	</nav>
 {:else if containerType == "footer"}
-	<footer {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? ` ${className}` : "")}>
+	<footer {...restProps} class={(overrideDefaultStyling ? "" : "fluid-container") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 		{@render children()}
 	</footer>
 {/if}

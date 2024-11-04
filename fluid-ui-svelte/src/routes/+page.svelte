@@ -1,5 +1,6 @@
 <script lang="ts">
 	import "../app.css";
+	import Icon from "@iconify/svelte";
 	import Container from "$lib/primitives/Container.svelte";
 	import Table from "$lib/primitives/Table.svelte";
 	import Text from "$lib/primitives/Text.svelte";
@@ -11,11 +12,13 @@
 	import TableData from "$lib/primitives/TableData.svelte";
 	import TableFooter from "$lib/primitives/TableFooter.svelte";
 	import Image from "$lib/primitives/Image.svelte";
-	import TextInput from "$lib/base/TextInput.svelte";
 	import Label from "$lib/primitives/Label.svelte";
-	import Dropdown from "$lib/components/Dropdown.svelte";
 	import Dialog from "$lib/primitives/Dialog.svelte";
-	import type { Component } from "svelte";
+	import Input from "$lib/primitives/Input.svelte";
+	import TextInput from "$lib/base/FluidTextInput.svelte";
+	import Dropdown from "$lib/components/Dropdown.svelte";
+	import Switch from "$lib/components/Switch.svelte";
+	import Drawer from "$lib/components/Drawer.svelte";
 
 	const testTableData = {
 		headers: ["Table Header 1", "Table Header 1", "Table Header 1"],
@@ -33,8 +36,6 @@
 		isDialogOpen: false,
 		isModalOpen: false,
 	});
-
-	let dialog: Component<typeof Dialog>;
 </script>
 
 <Container class={"flex flex-col min-h-screen p-16!" + (componentStates.darkMode ? " group dark" : " group light")}>
@@ -233,11 +234,21 @@
 		<Container>
 			<Text textType={"h2"} textValue="Images"></Text>
 			<Container class="flex justify-center gap-4">
+				<Text textType={"p"} textValue="Image Fail"></Text>
+				<Container class="w-24 h-24 overflow-clip">
+					<Image src="none" noPlaceholders={true}></Image>
+				</Container>
+				<Text textType={"p"} textValue="Image Success"></Text>
+				<Container class="w-24 h-24 overflow-clip">
+					<Image loading="lazy" src="https://picsum.photos/200" noPlaceholders={true}></Image>
+				</Container>
+				<Text textType={"p"} textValue="Image Fail with Error Handling"></Text>
 				<Container class="w-24 h-24 overflow-clip">
 					<Image src="none"></Image>
 				</Container>
+				<Text textType={"p"} textValue="Image Success with Error Handling"></Text>
 				<Container class="w-24 h-24 overflow-clip">
-					<Image src="https://picsum.photos/200/300"></Image>
+					<Image loading="lazy" src="https://picsum.photos/200"></Image>
 				</Container>
 			</Container>
 		</Container>
@@ -308,16 +319,31 @@
 			<Text textType={"h2"} textValue="Dialog"></Text>
 			<Container class="flex justify-center gap-4" overrideDefaultStyling={true}>
 				<Button onclick={() => (componentStates.isModalOpen = true)}>Toggle Dialog</Button>
-
 				<Button onclick={() => (componentStates.isDialogOpen = !componentStates.isDialogOpen)}>Toggle Non-Modal Dialog</Button>
 			</Container>
+		</Container>
+		<Container>
+			<Text textType={"h2"} textValue="Checkboxes"></Text>
+			<Container class="flex justify-center gap-4" overrideDefaultStyling={true}>
+				<Input type="checkbox"></Input>
+				<Container class="w-24 h-16">
+					<Switch></Switch>
+				</Container>
+			</Container>
+		</Container>
+		<Container>
+			<Text textType={"h2"} textValue="Drawers"></Text>
+			<Container class="flex justify-center gap-4" overrideDefaultStyling={true}>a</Container>
 		</Container>
 	</Container>
 </Container>
 
-<Dialog bind:isOpen={componentStates.isModalOpen}>
+<Dialog bind:isOpen={componentStates.isModalOpen} class="right-0">
 	<Text textType={"p"} textValue="Dialog Content"></Text>
 </Dialog>
+
+<Drawer position="left">Test</Drawer>
+
 <Dialog bind:isOpen={componentStates.isDialogOpen} dialogType="normal">
 	<Text textType={"p"} textValue="Dialog Content"></Text>
 </Dialog>
@@ -328,4 +354,11 @@
 
 {#snippet dropdownMatchingContent(isOpen: boolean)}
 	<Text textType={"p"} textValue={"Dropdown Button with Matching Content" + (isOpen ? " Open" : " Closed")}></Text>
+{/snippet}
+
+{#snippet imageLoadingElement(isOpen: boolean)}
+	<Icon icon="eos-icons:loading"></Icon>
+{/snippet}
+{#snippet imageFailedElement(isOpen: boolean)}
+	<Icon icon="fluent-mdl2:photo-error"></Icon>
 {/snippet}
