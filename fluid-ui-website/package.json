@@ -1,20 +1,11 @@
 {
-	"name": "fluid-ui-svelte",
-	"version": "0.1.0",
-	"author": {
-		"name": "Emre Ayaz",
-		"email": "emreayaz@frostium.io",
-		"url": "https://emreayaz.com"
-	},
-	"repository": {
-		"url": "https://github.com/frostium-dev/fluid-ui"
-	},
+	"name": "fluid-ui-website",
+	"version": "0.0.1",
+	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && npm run package",
+		"build": "vite build",
 		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
-		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
@@ -23,31 +14,11 @@
 		"test": "npm run test:unit -- --run && npm run test:e2e",
 		"test:e2e": "playwright test"
 	},
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
-	],
-	"sideEffects": [
-		"**/*.css"
-	],
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		}
-	},
-	"peerDependencies": {
-		"svelte": "^5.0.0"
-	},
 	"devDependencies": {
+		"@iconify/svelte": "^4.0.2",
 		"@playwright/test": "^1.45.3",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@types/eslint": "^9.6.0",
 		"eslint": "^9.7.0",
@@ -56,16 +27,16 @@
 		"globals": "^15.0.0",
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.6",
-		"publint": "^0.2.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.0.0",
-		"vite": "^5.0.11",
+		"vite": "^5.0.3",
 		"vitest": "^2.0.4"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.0-alpha.31",
+		"fluid-ui-svelte": "^0.1.0",
 		"tailwindcss": "^4.0.0-alpha.31"
 	}
 }

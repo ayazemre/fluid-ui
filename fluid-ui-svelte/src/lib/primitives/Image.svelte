@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import { type HTMLImgAttributes } from "svelte/elements";
+	import type { HTMLImgAttributes } from "svelte/elements";
 	const {
 		class: className,
 		loadingSnippet,

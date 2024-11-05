@@ -1,0 +1,319 @@
+@import "tailwindcss";
+
+@theme {
+    --font-family-sans: "Inter", sans-serif;
+    --color-*: initial;
+    --color-white: #fff;
+    --color-black: #000;
+
+    --color-neutral-50: #fafafa;
+    --color-neutral-100: #f4f4f5;
+    --color-neutral-200: #e4e4e7;
+    --color-neutral-300: #dedee1;
+    --color-neutral-400: #a1a1aa;
+    --color-neutral-500: #71717a;
+    --color-neutral-600: #52525b;
+    --color-neutral-700: #3f3f46;
+    --color-neutral-800: #27272a;
+    --color-neutral-900: #18181b;
+    --color-neutral-950: #09090b;
+
+    --color-primary-50: #eff4ff;
+    --color-primary-100: #dce6fd;
+    --color-primary-200: #c0d4fd;
+    --color-primary-300: #95bafb;
+    --color-primary-400: #6295f8;
+    --color-primary-500: #3e6ff3;
+    --color-primary-600: #284fe8;
+    --color-primary-700: #203bd5;
+    --color-primary-800: #2032ad;
+    --color-primary-900: #203088;
+    --color-primary-950: #182053;
+
+    --color-secondary-50: #f5f3ff;
+    --color-secondary-100: #ede9fe;
+    --color-secondary-200: #ddd6fe;
+    --color-secondary-300: #c4b5fd;
+    --color-secondary-400: #a78bfa;
+    --color-secondary-500: #8b5cf6;
+    --color-secondary-600: #7c3aed;
+    --color-secondary-700: #6d28d9;
+    --color-secondary-800: #5b21b6;
+    --color-secondary-900: #4c1d95;
+    --color-secondary-950: #2a1065;
+
+    --color-tetriary-50: #f5f3ff;
+    --color-tetriary-100: #ede9fe;
+    --color-tetriary-200: #ddd6fe;
+    --color-tetriary-300: #c4b5fd;
+    --color-tetriary-400: #a78bfa;
+    --color-tetriary-500: #8b5cf6;
+    --color-tetriary-600: #7c3aed;
+    --color-tetriary-700: #6d28d9;
+    --color-tetriary-800: #5b21b6;
+    --color-tetriary-900: #4c1d95;
+    --color-tetriary-950: #2a1065;
+
+    --color-success-50: #ecfdf5;
+    --color-success-100: #d1fae5;
+    --color-success-200: #a7f3d0;
+    --color-success-300: #6ee7b7;
+    --color-success-400: #34d399;
+    --color-success-500: #10b981;
+    --color-success-600: #059669;
+    --color-success-700: #0f766e;
+    --color-success-800: #065f46;
+    --color-success-900: #064e3b;
+    --color-success-950: #022c22;
+
+    --color-warning-50: #fffbeb;
+    --color-warning-100: #fef3c7;
+    --color-warning-200: #fde68a;
+    --color-warning-300: #fcd34d;
+    --color-warning-400: #fbbf24;
+    --color-warning-500: #f59e0b;
+    --color-warning-600: #d97706;
+    --color-warning-700: #b45309;
+    --color-warning-800: #92400e;
+    --color-warning-900: #78350f;
+    --color-warning-950: #451a03;
+
+    --color-info-50: #f0f9ff;
+    --color-info-100: #e0f2fe;
+    --color-info-200: #bae6fd;
+    --color-info-300: #7dd3fc;
+    --color-info-400: #38bdf8;
+    --color-info-500: #0ea5e9;
+    --color-info-600: #0284c7;
+    --color-info-700: #0369a1;
+    --color-info-800: #075985;
+    --color-info-900: #0c4a6e;
+    --color-info-950: #082f49;
+
+    --color-error-50: #fef2f2;
+    --color-error-100: #fee2e2;
+    --color-error-200: #fecaca;
+    --color-error-300: #fca5a5;
+    --color-error-400: #f87171;
+    --color-error-500: #ef4444;
+    --color-error-600: #dc2626;
+    --color-error-700: #b91c1c;
+    --color-error-800: #991b1b;
+    --color-error-900: #7f1d1d;
+    --color-error-950: #450a0a;
+}
+
+.fluid-container {
+    @apply bg-transparent group-[.dark]:bg-neutral-700
+}
+
+/* Buttons ----------------------------*/
+.fluid-button {
+    @apply w-full p-1 rounded-md
+}
+
+.fluid-button.fluid-solid-button.fluid-primary-button {
+    @apply bg-primary-500 hover:bg-primary-600
+}
+
+.fluid-button.fluid-solid-button.fluid-secondary-button {
+    @apply bg-secondary-500 hover:bg-secondary-600
+}
+
+.fluid-button.fluid-solid-button.fluid-tetriary-button {
+    @apply bg-tetriary-500 hover:bg-tetriary-600
+}
+
+.fluid-button.fluid-solid-button.fluid-neutral-button {
+    @apply bg-neutral-500 hover:bg-neutral-600
+}
+
+.fluid-button.fluid-solid-button.fluid-transparent-button {
+    @apply bg-transparent
+}
+
+.fluid-button.fluid-outline-button.fluid-primary-button {
+    @apply outline-1 outline-primary-500 hover:bg-primary-600
+}
+
+.fluid-button.fluid-outline-button.fluid-secondary-button {
+    @apply outline-1 outline-secondary-500 hover:bg-secondary-600
+}
+
+.fluid-button.fluid-outline-button.fluid-tetriary-button {
+    @apply outline-1 outline-tetriary-500 hover:bg-tetriary-600
+}
+
+.fluid-button.fluid-outline-button.fluid-neutral-button {
+    @apply outline-1 outline-neutral-500 hover:bg-neutral-600
+}
+
+.fluid-button.fluid-transparent-button.fluid-primary-button {
+    @apply bg-transparent hover:bg-primary-200
+}
+
+.fluid-button.fluid-transparent-button.fluid-secondary-button {
+    @apply bg-transparent hover:bg-secondary-200
+}
+
+.fluid-button.fluid-transparent-button.fluid-tetriary-button {
+    @apply bg-transparent hover:bg-tetriary-200
+}
+
+.fluid-button.fluid-transparent-button.fluid-neutral-button {
+    @apply bg-transparent hover:bg-neutral-200
+}
+
+
+/* Tables ----------------------------*/
+.fluid-table {
+    @apply w-full h-full border-1 border-primary-500 group-[.dark]:border-white text-center
+}
+
+.fluid-table-header {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-head {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-body {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-row {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-data {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+.fluid-table-footer {
+    @apply border-1 border-primary-500 group-[.dark]:border-white
+}
+
+
+/* Typography ----------------------------*/
+.fluid-h1 {
+    @apply text-5xl;
+}
+
+.fluid-h2 {
+    @apply text-4xl;
+}
+
+.fluid-h3 {
+    @apply text-3xl;
+}
+
+.fluid-h4 {
+    @apply text-2xl;
+}
+
+.fluid-h5 {
+    @apply text-xl;
+}
+
+.fluid-h6 {
+    @apply text-lg;
+}
+
+.fluid-p {
+    @apply text-base;
+}
+
+.fluid-text {
+    @apply text-black group-[.dark]:text-white;
+}
+
+
+/* Inputs ----------------------------*/
+.fluid-input {
+    @apply p-1
+}
+
+.fluid-input.fluid-text-input {
+    @apply outline-primary-500 w-full
+}
+
+
+.fluid-label {
+    @apply py-1
+}
+
+/* Image ----------------------------*/
+.fluid-image {
+    @apply p-1
+}
+
+.fluid-image-loading, .fluid-image-error {
+    @apply w-full h-full p-4
+}
+
+
+/* Dropdown ----------------------------*/
+.fluid-dropdown {
+    @apply relative
+}
+
+.fluid-dropdown-trigger {
+    @apply hover:bg-error-500
+}
+
+.fluid-dropdown-content {
+    @apply absolute bg-success-500 z-10
+}
+
+
+/* Dialog ----------------------------*/
+.fluid-dialog {
+    @apply m-auto p-2 outline-0
+}
+
+
+/* Switch ----------------------------*/
+.fluid-switch {
+    @apply relative inline-block rounded-full w-11 h-5 bg-neutral-300
+}
+
+.fluid-switch-checked {
+    @apply bg-success-500
+}
+
+.fluid-switch-slider {
+    @apply absolute top-0 left-0 w-5 h-5 bg-white border-primary-400 rounded-full border-1 transition-transform duration-300 peer-checked:border-primary-800 peer-checked:translate-x-6
+}
+
+
+/* Drawer ----------------------------*/
+.fluid-drawer {
+    @apply fixed top-0 left-0 bottom-0 right-0 w-full h-full bottom-0
+}
+
+.fluid-drawer-body {
+    @apply absolute bg-white
+}
+
+.fluid-drawer-backdrop {
+    @apply bg-neutral-500/50 w-full h-full
+}
+
+
+
+
+
+/* Utility Styles ----------------------------*/
+
+.fluid-text-input {
+    @apply outline-1
+}
+
+
+
+
+
+
+
+/* ----------------------- Custom Styles ----------------------- */

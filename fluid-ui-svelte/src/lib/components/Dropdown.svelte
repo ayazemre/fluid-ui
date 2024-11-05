@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Container from "$lib/primitives/Container.svelte";
 	import Button from "$lib/primitives/Button.svelte";
-	import { type Snippet } from "svelte";
+	import type { Snippet } from "svelte";
 	const {
 		class: className,
 		overrideDefaultStyling = false,

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type HTMLTextareaAttributes } from "svelte/elements";
+	import type { HTMLTextareaAttributes } from "svelte/elements";
 	let {
 		class: className,
 		value = $bindable(),

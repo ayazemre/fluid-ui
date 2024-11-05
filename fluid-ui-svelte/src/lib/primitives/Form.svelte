@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import { type HTMLFormAttributes } from "svelte/elements";
+	import type { HTMLFormAttributes } from "svelte/elements";
 	const {
 		class: className,
 		children,

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import { type HTMLTdAttributes } from "svelte/elements";
+	import type { HTMLTdAttributes } from "svelte/elements";
 	const {
 		class: className,
 		overrideDefaultStyling = false,
