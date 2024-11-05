@@ -1,6 +1,14 @@
 {
 	"name": "fluid-ui-svelte",
-	"version": "0.0.8",
+	"version": "0.1.0",
+	"author": {
+		"name": "Emre Ayaz",
+		"email": "emreayaz@frostium.io",
+		"url": "https://emreayaz.com"
+	},
+	"repository": {
+		"url": "https://github.com/frostium-dev/fluid-ui"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
