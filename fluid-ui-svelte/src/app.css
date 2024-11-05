@@ -285,3 +285,35 @@
 .fluid-switch-slider {
     @apply absolute top-0 left-0 w-5 h-5 bg-white border-primary-400 rounded-full border-1 transition-transform duration-300 peer-checked:border-primary-800 peer-checked:translate-x-6
 }
+
+
+/* Drawer ----------------------------*/
+.fluid-drawer {
+    @apply fixed top-0 left-0 bottom-0 right-0 w-full h-full bottom-0
+}
+
+.fluid-drawer-body {
+    @apply absolute bg-white
+}
+
+.fluid-drawer-backdrop {
+    @apply bg-neutral-500/50 w-full h-full
+}
+
+
+
+
+
+/* Utility Styles ----------------------------*/
+
+.fluid-text-input {
+    @apply outline-1
+}
+
+
+
+
+
+
+
+/* ----------------------- Custom Styles ----------------------- */

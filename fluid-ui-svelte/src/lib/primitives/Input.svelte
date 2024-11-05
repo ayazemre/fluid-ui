@@ -17,7 +17,7 @@
 </script>
 
 {#if type === "checkbox"}
-	<input {...restProps} bind:checked type="checkbox" class={(overrideDefaultStyling ? "" : "fluid-checkbox") + (className ? ` ${className}` : "")} />
+	<input {...restProps} bind:checked type="checkbox" class={(overrideDefaultStyling ? "" : "fluid-checkbox") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")} />
 {:else}
-	<input {...restProps} bind:value class={(overrideDefaultStyling ? "" : "fluid-input") + (className ? ` ${className}` : "")} />
+	<input {...restProps} bind:value class={(overrideDefaultStyling ? "" : "fluid-input") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")} />
 {/if}

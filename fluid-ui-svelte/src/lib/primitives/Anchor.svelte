@@ -13,6 +13,6 @@
 	} & HTMLAnchorAttributes = $props();
 </script>
 
-<anchor {...restProps} class={(overrideDefaultStyling ? "" : "fluid-anchor") + (className ? ` ${className}` : "")}>
+<a {...restProps} class={(overrideDefaultStyling ? "" : "fluid-anchor") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 	{@render children()}
-</anchor>
+</a>

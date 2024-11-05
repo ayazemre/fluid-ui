@@ -32,7 +32,7 @@
 	onclose={(e: Event) => {
 		isOpen = false;
 	}}
-	class={(overrideDefaultStyling ? "" : "fluid-dialog") + (className ? ` ${className}` : "")}
+	class={(overrideDefaultStyling ? "" : "fluid-dialog") +  (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}
 	{...restProps}
 >
 	{@render children()}

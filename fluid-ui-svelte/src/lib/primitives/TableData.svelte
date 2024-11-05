@@ -13,6 +13,6 @@
 	} & HTMLTdAttributes = $props();
 </script>
 
-<td {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-data") + (className ? ` ${className}` : "")}>
+<td {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-data") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 	{@render children()}
 </td>

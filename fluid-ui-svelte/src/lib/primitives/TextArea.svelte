@@ -12,4 +12,4 @@
 	} & Omit<HTMLTextareaAttributes, "value"> = $props();
 </script>
 
-<textarea {...restProps} bind:value class={(overrideDefaultStyling ? "" : "fluid-text-area") + (className ? ` ${className}` : "")}></textarea>
+<textarea {...restProps} bind:value class={(overrideDefaultStyling ? "" : "fluid-text-area") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}></textarea>

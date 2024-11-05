@@ -13,6 +13,6 @@
 	} & HTMLAttributes<HTMLTableRowElement> = $props();
 </script>
 
-<tr {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-row") + (className ? ` ${className}` : "")}>
+<tr {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-row") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 	{@render children()}
 </tr>

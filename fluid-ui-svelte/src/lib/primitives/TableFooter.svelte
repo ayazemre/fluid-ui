@@ -12,6 +12,6 @@
 	} = $props();
 </script>
 
-<tfoot {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-footer") + (className ? ` ${className}` : "")}>
+<tfoot {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-footer") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 	{@render children()}
 </tfoot>

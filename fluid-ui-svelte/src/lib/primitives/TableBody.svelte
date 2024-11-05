@@ -12,6 +12,6 @@
 	} = $props();
 </script>
 
-<tbody {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-body") + (className ? ` ${className}` : "")}>
+<tbody {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-body") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 	{@render children()}
 </tbody>

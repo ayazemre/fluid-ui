@@ -12,6 +12,6 @@
 	} = $props();
 </script>
 
-<thead {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-header") + (className ? ` ${className}` : "")}>
+<thead {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-header") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 	{@render children()}
 </thead>

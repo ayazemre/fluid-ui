@@ -13,6 +13,6 @@
 	} & HTMLThAttributes = $props();
 </script>
 
-<th {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-head") + (className ? ` ${className}` : "")}>
+<th {...restProps} class={(overrideDefaultStyling ? "" : "fluid-table-head") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}>
 	{@render children()}
 </th>

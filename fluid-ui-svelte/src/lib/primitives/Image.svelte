@@ -30,7 +30,7 @@
 			status = "done";
 			console.log(status);
 		}}
-		class={(overrideDefaultStyling ? "" : "fluid-image") + (className ? ` ${className}` : "") + (status == "loading" ? " invisible" : "")}
+		class={(overrideDefaultStyling ? "" : "fluid-image") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "") + (status == "loading" ? " invisible" : "")}
 	/>
 {:else if status == "loading" || status == "done"}
 	<div class={"fluid-image-loading" + (status === "done" ? " hidden" : "")}>
@@ -51,7 +51,7 @@
 			status = "done";
 			console.log(status);
 		}}
-		class={(overrideDefaultStyling ? "" : "fluid-image") + (className ? ` ${className}` : "") + (status == "loading" ? " invisible" : "")}
+		class={(overrideDefaultStyling ? "" : "fluid-image") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "") + (status == "loading" ? " invisible" : "")}
 	/>
 {:else if status == "failed"}
 	<div class="fluid-image-error">

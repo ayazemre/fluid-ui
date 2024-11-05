@@ -1,26 +1,35 @@
 <script lang="ts">
-	import type { Snippet } from "svelte";
+	import { onMount, type Snippet } from "svelte";
 	import Container from "$lib/primitives/Container.svelte";
+	import { fade, slide } from "svelte/transition";
+	import { cubicInOut } from "svelte/easing";
+	import Button from "$lib/primitives/Button.svelte";
 	let {
 		class: className,
 		isOpen = $bindable(false),
-		position = "right",
+		alignment = "right",
 		children,
 		overrideDefaultStyling = false,
-		...restProps
 	}: {
 		class?: string;
 		isOpen?: boolean;
-		position: "left" | "right" | "top" | "bottom";
+		alignment: "left" | "right" | "top" | "bottom";
 		overrideDefaultStyling?: boolean;
 		children: Snippet;
 	} = $props();
-
-	let positions = ["left", "right", "bottom", "top"];
 </script>
 
-<Container overrideDefaultStyling={true} class={"fixed bg-neutral-500/50 w-full h-full bottom-0" + (isOpen ? "" : " hidden")}>
-	<Container overrideDefaultStyling={true} class={"absolute bg-white h-full w-1/3" + (" " + position + "-0")}>
+<Container overrideDefaultStyling={true} class={(overrideDefaultStyling ? "" : "fluid-drawer") + (isOpen ? "" : " hidden")}>
+	<Container
+		class={"fluid-drawer-body" + (alignment == "left" || alignment == "right" ? ` ${alignment}-0 h-full` : "") + (alignment == "top" || alignment == "bottom" ? ` ${alignment}-0 w-full` : "")}
+	>
 		{@render children()}
 	</Container>
+	<Container
+		class="fluid-drawer-backdrop"
+		onclick={(e: MouseEvent) => {
+			console.log(isOpen);
+			isOpen = false;
+		}}
+	></Container>
 </Container>

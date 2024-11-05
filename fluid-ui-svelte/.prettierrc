@@ -1,6 +1,7 @@
 {
 	"useTabs": true,
 	"printWidth": 200,
+	"svelteStrictMode": false,
 	"plugins": [
 		"prettier-plugin-svelte"
 	],
