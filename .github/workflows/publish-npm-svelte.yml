@@ -17,9 +17,10 @@ jobs:
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: cd fluid-ui-svelte
-      - run: ls -a
-      - run: npm i
-      - run: npm publish --provenance --access public
+      - run: |
+          cd fluid-ui-svelte
+          ls -a
+          npm i
+          npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_FLUIDUI_SVELTE_TOKEN }}
