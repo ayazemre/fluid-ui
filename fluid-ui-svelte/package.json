@@ -7,7 +7,7 @@
 		"url": "https://emreayaz.com"
 	},
 	"repository": {
-		"url": "https://github.com/frostium-dev/fluid-ui"
+		"url": "https://github.com/ayazemre/fluid-ui"
 	},
 	"scripts": {
 		"dev": "vite dev",
