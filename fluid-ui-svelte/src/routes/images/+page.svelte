@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Container, Text, Image } from "$lib/index.js";
-	import Icon from "@iconify/svelte";
 </script>
 
 <Container>
@@ -47,8 +46,8 @@
 </Container>
 
 {#snippet imageLoadingElement()}
-	<Icon icon="eos-icons:loading"></Icon>
+	<Text textValue="loading"></Text>
 {/snippet}
 {#snippet imageFailedElement()}
-	<Icon icon="fluent-mdl2:photo-error"></Icon>
+	<Text textValue="error"></Text>
 {/snippet}

@@ -4,15 +4,14 @@
 	import type { Snippet } from "svelte";
 	const {
 		class: className,
+		contentClass,
 		overrideDefaultStyling = false,
-		matchContentWidthToTrigger = false,
 		trigger,
 		children,
-		...restProps
 	}: {
 		class?: string;
+		contentClass?: string;
 		overrideDefaultStyling?: boolean;
-		matchContentWidthToTrigger?: boolean;
 		trigger: Snippet<[isOpen: boolean]>;
 		children: Snippet;
 	} = $props();
@@ -28,7 +27,9 @@
 	>
 		{@render trigger(isOpen)}
 	</Button>
-	<Container class={"fluid-dropdown-content" + (isOpen ? "" : " hidden") + (matchContentWidthToTrigger ? " w-full" : "")}>
-		{@render children()}
+	<Container class={(overrideDefaultStyling ? "" : "fluid-dropdown-content") + (contentClass ? ` ${contentClass}` : "")}>
+		{#if isOpen}
+			{@render children()}
+		{/if}
 	</Container>
 </Container>
