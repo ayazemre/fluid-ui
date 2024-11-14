@@ -1,35 +1,33 @@
 <script lang="ts">
-	import { onMount, type Snippet } from "svelte";
+	import type { Snippet } from "svelte";
 	import Container from "$lib/primitives/Container.svelte";
-	import { fade, slide } from "svelte/transition";
-	import { cubicInOut } from "svelte/easing";
 	import Button from "$lib/primitives/Button.svelte";
 	let {
 		class: className,
+		contentClass,
 		isOpen = $bindable(false),
-		alignment = "right",
 		children,
 		overrideDefaultStyling = false,
 	}: {
 		class?: string;
+		contentClass?: string;
 		isOpen?: boolean;
-		alignment: "left" | "right" | "top" | "bottom";
 		overrideDefaultStyling?: boolean;
 		children: Snippet;
 	} = $props();
 </script>
 
-<Container overrideDefaultStyling={true} class={(overrideDefaultStyling ? "" : "fluid-drawer") + (isOpen ? "" : " hidden")}>
-	<Container
-		class={"fluid-drawer-body" + (alignment == "left" || alignment == "right" ? ` ${alignment}-0 h-full` : "") + (alignment == "top" || alignment == "bottom" ? ` ${alignment}-0 w-full` : "")}
-	>
+<Container overrideDefaultStyling={true} class={overrideDefaultStyling ? "" + (className ? className : "") : "fluid-drawer" + (className ? ` ${className}` : "")}>
+	<Container class={overrideDefaultStyling ? "" + (contentClass ? `${contentClass}` : "") : "fluid-drawer-body" + (contentClass ? ` ${contentClass}` : "")}>
 		{@render children()}
 	</Container>
-	<Container
+	<Button
+		overrideDefaultStyling
 		class="fluid-drawer-backdrop"
-		onclick={(e: MouseEvent) => {
-			console.log(isOpen);
+		onclick={(e: Event) => {
 			isOpen = false;
 		}}
-	></Container>
+	>
+		<Container></Container>
+	</Button>
 </Container>

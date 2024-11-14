@@ -1,5 +1,5 @@
 // Primitives 
-export { default as Anchor } from "$lib/primitives/Anchor.svelte";
+export { default as Link } from "$lib/primitives/Link.svelte";
 export { default as Button } from "$lib/primitives/Button.svelte";
 export { default as Container } from "$lib/primitives/Container.svelte";
 export { default as Dialog } from "$lib/primitives/Dialog.svelte";
@@ -23,7 +23,7 @@ export { default as Accordion } from "$lib/components/Accordion.svelte";
 export { default as Breadcrumb } from "$lib/components/Breadcrumb.svelte";
 export { default as Drawer } from "$lib/components/Drawer.svelte";
 export { default as Dropdown } from "$lib/components/Dropdown.svelte";
-export { default as NotificationArea } from "$lib/components/NotificationArea.svelte";
+export { default as NotificationArea } from "$lib/components/notification/NotificationArea.svelte";
 export { default as Pagination } from "$lib/components/Pagination.svelte";
 export { default as Progress } from "$lib/components/Progress.svelte";
 export { default as Switch } from "$lib/components/Switch.svelte";
@@ -34,7 +34,7 @@ export { default as UploadZone } from "$lib/components/UploadZone.svelte";
 // Prebuilt
 
 export { default as FormBuilder } from "$lib/prebuilt/FormBuilder.svelte";
-export { default as InteractiveScrollArea } from "$lib/prebuilt/InteractiveScrollArea.svelte";
+export { default as InteractiveScrollArea } from "$lib/components/InteractiveScrollArea.svelte";
 export { default as Document } from "$lib/prebuilt/document/Document.svelte";
 export { default as DocumentBlock } from "$lib/prebuilt/document/DocumentBlock.svelte";
 export { default as DocumentPage } from "$lib/prebuilt/document/DocumentPage.svelte";

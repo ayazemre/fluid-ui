@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import { type HTMLButtonAttributes } from "svelte/elements";
+	import type { HTMLButtonAttributes } from "svelte/elements";
 
 	const {
 		class: className = "",
@@ -34,8 +34,8 @@
 	}}
 	class={(overrideDefaultStyling ? "" : "fluid-button") +
 		(className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "") +
-		(" fluid-" + buttonType + "-button") +
-		(" fluid-" + buttonStyle + "-button")}
+		(overrideDefaultStyling ? "" : " fluid-" + buttonType + "-button") +
+		(overrideDefaultStyling ? "" : " fluid-" + buttonStyle + "-button")}
 	{...restProps}
 >
 	{@render children()}

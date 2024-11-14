@@ -104,7 +104,7 @@
 }
 
 .fluid-container {
-    @apply p-2
+    @apply bg-primary-100 group-[.dark]:bg-tetriary-950
 }
 
 /* Buttons ----------------------------*/
@@ -263,7 +263,7 @@
 }
 
 .fluid-dropdown-content {
-    @apply absolute bg-success-500 z-10
+    @apply absolute bg-transparent z-10 mt-1
 }
 
 
@@ -301,7 +301,10 @@
 }
 
 
-
+/* Notifications ----------------------------*/
+.fluid-notification-area {
+    @apply fixed flex flex-col justify-end bottom-10 right-10 w-64 max-h-64 overflow-clip bg-transparent shadow-[1px_35px_60px_-15px_rgba(0.9)]
+}
 
 
 /* Utility Styles ----------------------------*/

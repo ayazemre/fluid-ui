@@ -6,11 +6,6 @@
 
 <Container>
 	<Text textType={"h2"} textValue="Drawers"></Text>
-	{#if componentStates.isTopDrawerOpen}
-		<Container transitions={fade} class="w-20 h-20 bg-black">asf</Container>
-		<div transition:fade class="w-20 h-20 bg-black">asf</div>
-	{/if}
-
 	<Container class="flex justify-center gap-4" overrideDefaultStyling={true}>
 		<Button onclick={() => (componentStates.isLeftDrawerOpen = !componentStates.isLeftDrawerOpen)}>
 			<Text textType={"p"} textValue="Toggle Left Drawer"></Text>
@@ -28,15 +23,24 @@
 </Container>
 
 {#if componentStates.isLeftDrawerOpen}
-	<div class="z-50">
-		<Drawer alignment="left" bind:isOpen={componentStates.isLeftDrawerOpen}>Test</Drawer>
+	<div transition:fade={{ duration: 200 }}>
+		<Drawer contentClass="left-0 h-full p-2" bind:isOpen={componentStates.isLeftDrawerOpen}>Test</Drawer>
 	</div>
 {/if}
-
-{#if componentStates.isBottomDrawerOpen}
-	<Drawer alignment="bottom" bind:isOpen={componentStates.isBottomDrawerOpen}>Test</Drawer>
-{/if}
-
 {#if componentStates.isRightDrawerOpen}
-	<Drawer alignment="right" bind:isOpen={componentStates.isRightDrawerOpen}>Test</Drawer>
+	<div transition:fade={{ duration: 200 }}>
+		<Drawer contentClass="right-0 h-full p-2" bind:isOpen={componentStates.isRightDrawerOpen}>
+			<Text textValue="asdf"></Text>
+		</Drawer>
+	</div>
+{/if}
+{#if componentStates.isTopDrawerOpen}
+	<div transition:fade={{ duration: 200 }}>
+		<Drawer contentClass="top-0 w-full p-2" bind:isOpen={componentStates.isTopDrawerOpen}>Test</Drawer>
+	</div>
+{/if}
+{#if componentStates.isBottomDrawerOpen}
+	<div transition:fade={{ duration: 200 }}>
+		<Drawer contentClass="bottom-0 w-full p-2" bind:isOpen={componentStates.isBottomDrawerOpen}>Test</Drawer>
+	</div>
 {/if}

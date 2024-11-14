@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import { type HTMLTableAttributes } from "svelte/elements";
+	import type { HTMLTableAttributes } from "svelte/elements";
 	const {
 		class: className,
 		children,

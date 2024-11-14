@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import { type HTMLDialogAttributes } from "svelte/elements";
+	import type { HTMLDialogAttributes } from "svelte/elements";
 	let {
 		class: className,
 		isOpen = $bindable(false),
@@ -32,7 +32,7 @@
 	onclose={(e: Event) => {
 		isOpen = false;
 	}}
-	class={(overrideDefaultStyling ? "" : "fluid-dialog") +  (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}
+	class={(overrideDefaultStyling ? "" : "fluid-dialog") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "")}
 	{...restProps}
 >
 	{@render children()}
