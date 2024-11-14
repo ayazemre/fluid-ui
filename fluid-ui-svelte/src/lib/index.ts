@@ -28,7 +28,7 @@ export { default as Pagination } from "$lib/components/Pagination.svelte";
 export { default as Progress } from "$lib/components/Progress.svelte";
 export { default as Switch } from "$lib/components/Switch.svelte";
 export { default as Tabs } from "$lib/components/Tabs.svelte";
-export { default as UploadZone } from "$lib/components/UploadZone.svelte";
+export { default as Dropzone } from "$lib/components/Dropzone.svelte";
 
 
 // Prebuilt
