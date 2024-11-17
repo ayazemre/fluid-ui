@@ -6,13 +6,13 @@
 		class: className,
 		contentClass,
 		overrideDefaultStyling = false,
-		trigger,
+		dropdownTrigger,
 		children,
 	}: {
 		class?: string;
 		contentClass?: string;
 		overrideDefaultStyling?: boolean;
-		trigger: Snippet<[isOpen: boolean]>;
+		dropdownTrigger: Snippet<[isOpen: boolean]>;
 		children: Snippet;
 	} = $props();
 
@@ -21,11 +21,12 @@
 
 <Container class={(overrideDefaultStyling ? "" : "fluid-dropdown") + (className ? ` ${className}` : "")} overrideDefaultStyling={true}>
 	<Button
+		overrideDefaultStyling
 		onclick={(e: Event) => {
 			isOpen = !isOpen;
 		}}
 	>
-		{@render trigger(isOpen)}
+		{@render dropdownTrigger(isOpen)}
 	</Button>
 	<Container class={(overrideDefaultStyling ? "" : "fluid-dropdown-content") + (contentClass ? ` ${contentClass}` : "")}>
 		{#if isOpen}
