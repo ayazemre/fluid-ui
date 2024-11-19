@@ -4,12 +4,14 @@
 	import type { Snippet } from "svelte";
 	const {
 		class: className,
+		triggerClass,
 		contentClass,
 		overrideDefaultStyling = false,
 		dropdownTrigger,
 		children,
 	}: {
 		class?: string;
+		triggerClass?: string;
 		contentClass?: string;
 		overrideDefaultStyling?: boolean;
 		dropdownTrigger: Snippet<[isOpen: boolean]>;
@@ -20,7 +22,15 @@
 </script>
 
 <Container class={(overrideDefaultStyling ? "" : "fluid-dropdown") + (className ? ` ${className}` : "")} overrideDefaultStyling={true}>
-	{@render dropdownTrigger(isOpen)}
+	<Button
+		class={(overrideDefaultStyling ? "" : "fluid-dropdown-trigger") + (triggerClass ? ` ${triggerClass}` : "")}
+		overrideDefaultStyling
+		onclick={(e: Event) => {
+			isOpen = !isOpen;
+		}}
+	>
+		{@render dropdownTrigger(isOpen)}
+	</Button>
 	<Container overrideDefaultStyling class={(overrideDefaultStyling ? "" : "fluid-dropdown-content") + (contentClass ? ` ${contentClass}` : "")}>
 		{#if isOpen}
 			{@render children()}
