@@ -20,15 +20,8 @@
 </script>
 
 <Container class={(overrideDefaultStyling ? "" : "fluid-dropdown") + (className ? ` ${className}` : "")} overrideDefaultStyling={true}>
-	<Button
-		overrideDefaultStyling
-		onclick={(e: Event) => {
-			isOpen = !isOpen;
-		}}
-	>
-		{@render dropdownTrigger(isOpen)}
-	</Button>
-	<Container class={(overrideDefaultStyling ? "" : "fluid-dropdown-content") + (contentClass ? ` ${contentClass}` : "")}>
+	{@render dropdownTrigger(isOpen)}
+	<Container overrideDefaultStyling class={(overrideDefaultStyling ? "" : "fluid-dropdown-content") + (contentClass ? ` ${contentClass}` : "")}>
 		{#if isOpen}
 			{@render children()}
 		{/if}
