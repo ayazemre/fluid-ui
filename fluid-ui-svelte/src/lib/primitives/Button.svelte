@@ -2,12 +2,14 @@
 	import type { Snippet } from "svelte";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 
-	const {
+	let {
 		class: className = "",
 		buttonType = "solid",
 		buttonStyle = "primary",
 		onclick,
 		overrideDefaultStyling = false,
+		isActive = $bindable(false),
+		activeChildren,
 		children,
 		...restProps
 	}: {
@@ -16,9 +18,10 @@
 		buttonStyle?: "primary" | "secondary" | "tetriary" | "neutral";
 		onclick: (e: Event) => any;
 		overrideDefaultStyling?: boolean;
+		isActive?: boolean;
+		activeChildren?: Snippet;
 		children: Snippet;
 	} & Omit<HTMLButtonAttributes, "onclick"> = $props();
-	let isActive = $state(false);
 </script>
 
 <button
@@ -38,5 +41,13 @@
 		(overrideDefaultStyling ? "" : " fluid-" + buttonStyle + "-button")}
 	{...restProps}
 >
-	{@render children()}
+	{#if activeChildren}
+		{#if isActive}
+			{@render activeChildren()}
+		{:else}
+			{@render children()}
+		{/if}
+	{:else}
+		{@render children()}
+	{/if}
 </button>
