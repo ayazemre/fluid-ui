@@ -1,3 +1,7 @@
+//Types
+
+export type { DropdownOptions as DropdownOptions } from "$lib/types.ts";
+
 // Primitives 
 export { default as Link } from "$lib/primitives/Link.svelte";
 export { default as Button } from "$lib/primitives/Button.svelte";

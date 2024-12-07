@@ -1,47 +1,43 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
 	import type { HTMLImgAttributes } from "svelte/elements";
-	const {
+	let {
 		class: className,
 		loadingSnippet,
-		errorSnippet,
-		noPlaceholders = false,
+		placeholderSnippet,
 		overrideDefaultStyling = false,
+		rawElement,
 		...restProps
 	}: {
 		class?: string;
 		loadingSnippet?: Snippet;
-		errorSnippet?: Snippet;
+		placeholderSnippet?: Snippet;
 		noPlaceholders?: boolean;
 		overrideDefaultStyling?: boolean;
+		rawElement?: HTMLElement;
 	} & Omit<HTMLImgAttributes, "onerror" | "onload"> = $props();
 
-	let status = $state("loading");
+	let status: "loading" | "done" | "failed" = $state("loading");
 </script>
 
-{#if noPlaceholders}
-	<img
-		{...restProps}
-		onerror={() => {
-			status = "failed";
-			console.log(status);
-		}}
-		onload={() => {
-			status = "done";
-			console.log(status);
-		}}
-		class={(overrideDefaultStyling ? "" : "fluid-image") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "") + (status == "loading" ? " invisible" : "")}
-	/>
-{:else if status == "loading" || status == "done"}
-	<div class={"fluid-image-loading" + (status === "done" ? " hidden" : "")}>
+{#if status == "failed"}
+	{#if placeholderSnippet}
+		<div class="fluid-image-error">
+			{@render placeholderSnippet()}
+		</div>
+	{:else}
+		<p>Image not loaded, provide placeholder.</p>
+	{/if}
+{:else if status == "loading" || "done"}
+	<div class={"fluid-image-loading" + status !== "loading" ? " hidden" : ""}>
 		{#if loadingSnippet}
 			{@render loadingSnippet()}
 		{:else}
-			<p>No loading snippet provided.</p>
+			<p>Image loading, provide placeholder.</p>
 		{/if}
 	</div>
-
 	<img
+		bind:this={rawElement}
 		{...restProps}
 		onerror={() => {
 			status = "failed";
@@ -53,12 +49,4 @@
 		}}
 		class={(overrideDefaultStyling ? "" : "fluid-image") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "") + (status == "loading" ? " invisible" : "")}
 	/>
-{:else if status == "failed"}
-	<div class="fluid-image-error">
-		{#if errorSnippet}
-			{@render errorSnippet()}
-		{:else}
-			<p>No error snippet provided.</p>
-		{/if}
-	</div>
 {/if}

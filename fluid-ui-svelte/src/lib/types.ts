@@ -1,0 +1,1 @@
+export type DropdownOptions = { isOpen: boolean; toggleDropdown: Function; };

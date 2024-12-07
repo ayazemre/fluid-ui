@@ -8,13 +8,13 @@
 		<Container>
 			<Text textType={"p"} textValue="Image Fail"></Text>
 			<Container class="w-24 h-24 overflow-clip">
-				<Image src="none" noPlaceholders={true}></Image>
+				<Image src="none"></Image>
 			</Container>
 		</Container>
 		<Container>
 			<Text textType={"p"} textValue="Image Success"></Text>
 			<Container class="w-24 h-24 overflow-clip">
-				<Image loading="lazy" src="https://picsum.photos/200" noPlaceholders={true}></Image>
+				<Image loading="lazy" src="https://picsum.photos/200"></Image>
 			</Container>
 		</Container>
 		<Container>
@@ -33,7 +33,7 @@
 		<Container>
 			<Text textType={"p"} textValue="Image Fail with Error Handling Custom Error"></Text>
 			<Container class="w-24 h-24 overflow-clip">
-				<Image src="none" errorSnippet={imageFailedElement}></Image>
+				<Image src="none" placeholderSnippet={imagePlaceholder}></Image>
 			</Container>
 		</Container>
 		<Container>
@@ -48,6 +48,6 @@
 {#snippet imageLoadingElement()}
 	<Text textValue="loading"></Text>
 {/snippet}
-{#snippet imageFailedElement()}
+{#snippet imagePlaceholder()}
 	<Text textValue="error"></Text>
 {/snippet}
