@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { Container, Text, Image } from "$lib/index.js";
+	import Button from "$lib/primitives/Button.svelte";
+	let url = $state("https://picsum.photos/200");
 </script>
 
 <Container>
@@ -32,7 +34,7 @@
 		<Container>
 			<Text textType={"p"} textValue="Image Success with Error Handling Default"></Text>
 			<Container class="w-24 h-24 overflow-clip">
-				<Image loading="lazy" src="https://picsum.photos/200"></Image>
+				<Image src="https://picsum.photos/200"></Image>
 			</Container>
 		</Container>
 
@@ -45,9 +47,14 @@
 		<Container>
 			<Text textType={"p"} textValue="Image Success with Error Handling Custom Loader"></Text>
 			<Container class="w-24 h-24 overflow-clip">
-				<Image src="https://picsum.photos/200" loadingSnippet={imageLoadingElement}></Image>
+				<Image src={url} loadingSnippet={imageLoadingElement}></Image>
 			</Container>
 		</Container>
+		<Button
+			onclick={(e) => {
+				url = "https://picsum.photos/400";
+			}}>test</Button
+		>
 	</Container>
 </Container>
 

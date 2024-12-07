@@ -18,6 +18,9 @@
 	} & Omit<HTMLImgAttributes, "onerror" | "onload"> = $props();
 
 	let status: "loading" | "done" | "failed" = $state("loading");
+	$effect(() => {
+		restProps.src ? (status = "loading") : "";
+	});
 </script>
 
 {#if status == "failed" || !restProps.src}
@@ -43,11 +46,9 @@
 		{...restProps}
 		onerror={() => {
 			status = "failed";
-			console.log(status);
 		}}
 		onload={() => {
 			status = "done";
-			console.log(status);
 		}}
 		class={(overrideDefaultStyling ? "" : "fluid-image") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "") + (status == "done" ? "" : " hidden")}
 	/>
