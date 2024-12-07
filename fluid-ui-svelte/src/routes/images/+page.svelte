@@ -6,9 +6,15 @@
 	<Text textType={"h2"} textValue="Images"></Text>
 	<Container class="flex flex-col justify-center gap-4">
 		<Container>
-			<Text textType={"p"} textValue="Image Fail"></Text>
+			<Text textType={"p"} textValue="Image Without Src"></Text>
 			<Container class="w-24 h-24 overflow-clip">
-				<Image src="none"></Image>
+				<Image src=""></Image>
+			</Container>
+		</Container>
+		<Container>
+			<Text textType={"p"} textValue="Image With Src Fail"></Text>
+			<Container class="w-24 h-24 overflow-clip">
+				<Image src="asdf"></Image>
 			</Container>
 		</Container>
 		<Container>
@@ -39,7 +45,7 @@
 		<Container>
 			<Text textType={"p"} textValue="Image Success with Error Handling Custom Loader"></Text>
 			<Container class="w-24 h-24 overflow-clip">
-				<Image loading="lazy" src="https://picsum.photos/200" loadingSnippet={imageLoadingElement}></Image>
+				<Image src="https://picsum.photos/200" loadingSnippet={imageLoadingElement}></Image>
 			</Container>
 		</Container>
 	</Container>

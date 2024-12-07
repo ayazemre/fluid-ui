@@ -20,7 +20,7 @@
 	let status: "loading" | "done" | "failed" = $state("loading");
 </script>
 
-{#if status == "failed"}
+{#if status == "failed" || !restProps.src}
 	{#if placeholderSnippet}
 		<div class="fluid-image-error">
 			{@render placeholderSnippet()}
@@ -28,14 +28,16 @@
 	{:else}
 		<p>Image not loaded, provide placeholder.</p>
 	{/if}
-{:else if status == "loading" || "done"}
-	<div class={"fluid-image-loading" + status !== "loading" ? " hidden" : ""}>
-		{#if loadingSnippet}
-			{@render loadingSnippet()}
-		{:else}
-			<p>Image loading, provide placeholder.</p>
-		{/if}
-	</div>
+{:else}
+	{#if status == "loading"}
+		<div class={"fluid-image-loading" + (status !== "loading" ? " hidden" : "")}>
+			{#if loadingSnippet}
+				{@render loadingSnippet()}
+			{:else}
+				<p>Image loading, provide placeholder.</p>
+			{/if}
+		</div>
+	{/if}
 	<img
 		bind:this={rawElement}
 		{...restProps}
@@ -47,6 +49,6 @@
 			status = "done";
 			console.log(status);
 		}}
-		class={(overrideDefaultStyling ? "" : "fluid-image") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "") + (status == "loading" ? " invisible" : "")}
+		class={(overrideDefaultStyling ? "" : "fluid-image") + (className ? (overrideDefaultStyling ? `${className}` : ` ${className}`) : "") + (status == "done" ? "" : " hidden")}
 	/>
 {/if}
