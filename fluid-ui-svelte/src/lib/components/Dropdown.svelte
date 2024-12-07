@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Container from "$lib/primitives/Container.svelte";
 	import Button from "$lib/primitives/Button.svelte";
-	import type { Snippet } from "svelte";
+	import { onMount, type Snippet } from "svelte";
 	import type { DropdownOptions } from "$lib/types.js";
 	let {
 		class: className,
@@ -33,15 +33,18 @@
 			isOpen = !isOpen;
 		},
 	};
-	if (shouldCloseOnClickOutside) {
-		document.addEventListener("click", (e) => {
-			if (isOpen && e.target) {
-				if (!triggerRawElement.contains(e.target as HTMLElement) && !contentRawElement.contains(e.target as HTMLElement)) {
-					isOpen = false;
+
+	onMount(() => {
+		if (shouldCloseOnClickOutside) {
+			document.addEventListener("click", (e) => {
+				if (isOpen && e.target) {
+					if (!triggerRawElement.contains(e.target as HTMLElement) && !contentRawElement.contains(e.target as HTMLElement)) {
+						isOpen = false;
+					}
 				}
-			}
-		});
-	}
+			});
+		}
+	});
 </script>
 
 <Container bind:rawElement={triggerRawElement} class={(overrideDefaultStyling ? "" : "fluid-dropdown") + (className ? ` ${className}` : "")} overrideDefaultStyling={true}>
