@@ -20,7 +20,7 @@
 		contentClass?: string;
 		overrideDefaultStyling?: boolean;
 		isOpen?: boolean;
-		shouldCloseOnClickOutside: boolean;
+		shouldCloseOnClickOutside?: boolean;
 		dropdownTrigger: Snippet<[options: { isOpen: boolean; toggleDropdown: Function }]>;
 		dropdownContent: Snippet<[options: { isOpen: boolean; toggleDropdown: Function }]>;
 		triggerRawElement?: HTMLElement;
@@ -37,7 +37,7 @@
 	onMount(() => {
 		if (shouldCloseOnClickOutside) {
 			document.addEventListener("click", (e) => {
-				if (isOpen && e.target) {
+				if (isOpen && contentRawElement && triggerRawElement) {
 					if (!triggerRawElement!.contains(e.target as HTMLElement) && !contentRawElement!.contains(e.target as HTMLElement)) {
 						isOpen = false;
 					}
