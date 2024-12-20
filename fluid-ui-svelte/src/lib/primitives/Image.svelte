@@ -6,24 +6,26 @@
 		loadingSnippet,
 		placeholderSnippet,
 		overrideDefaultStyling = false,
-		rawElement,
+		rawElement = $bindable(),
+		src = $bindable(),
 		...restProps
 	}: {
 		class?: string;
 		loadingSnippet?: Snippet;
 		placeholderSnippet?: Snippet;
 		noPlaceholders?: boolean;
+		src: string;
 		overrideDefaultStyling?: boolean;
 		rawElement?: HTMLElement;
-	} & Omit<HTMLImgAttributes, "onerror" | "onload"> = $props();
+	} & Omit<HTMLImgAttributes, "onerror" | "onload" | "src"> = $props();
 
 	let status: "loading" | "done" | "failed" = $state("loading");
 	$effect(() => {
-		restProps.src ? (status = "loading") : "";
+		src ? (status = "loading") : "";
 	});
 </script>
 
-{#if status == "failed" || !restProps.src}
+{#if status == "failed" || !src}
 	{#if placeholderSnippet}
 		<div class="fluid-image-error">
 			{@render placeholderSnippet()}

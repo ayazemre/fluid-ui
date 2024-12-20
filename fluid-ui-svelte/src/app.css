@@ -109,7 +109,7 @@
 
 /* Buttons ----------------------------*/
 .fluid-button {
-    @apply w-full h-full p-1
+    @apply size-full p-1
 }
 
 .fluid-button.fluid-solid-button.fluid-primary-button {
@@ -163,7 +163,7 @@
 
 /* Tables ----------------------------*/
 .fluid-table {
-    @apply w-full h-full border-1 border-primary-500 group-[.dark]:border-white text-center
+    @apply size-full border-1 border-primary-500 group-[.dark]:border-white text-center
 }
 
 .fluid-table-header {
